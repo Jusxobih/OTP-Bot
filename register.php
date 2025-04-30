@@ -12,10 +12,10 @@ include('DB.php');
 		    
 		    DB::query('INSERT INTO users VALUES (\'\', :username, :password, :chatid)', array(':username'=>$username, ':password'=>password_hash($password, PASSWORD_BCRYPT), ':chatid'=>$chatid ));
             
-            file_get_contents("https://api.telegram.org/[Bot_Token]/sendmessage?chat_id=".$chatid."&text=Registered");
+            file_get_contents("https://api.telegram.org/[7644614420:AAHVFoGooaF_sEo4XAuIstmMIiMlM_VFKso]/sendmessage?chat_id=".$chatid."&text=Registered");
 		}
 		
 		else {
-		    file_get_contents("https://api.telegram.org/[Bot_Token]/sendmessage?chat_id=".$chatid."&text=Already registered");
+		    file_get_contents("https://api.telegram.org/[7644614420:AAHVFoGooaF_sEo4XAuIstmMIiMlM_VFKso]/sendmessage?chat_id=".$chatid."&text=Already registered");
 		}
 ?>

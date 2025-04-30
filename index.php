@@ -7,13 +7,13 @@ if (isset($_POST['login'])) {
 
         if (DB::query('SELECT username FROM users WHERE username=:username', array(':username'=>$username))) {
             
-            $chatid = DB::query('SELECT chatid FROM users WHERE username=:username', array(':username'=>$username))[0]['chatid'];
+            $chatid = DB::query('SELECT chatid FROM users WHERE username=:username', array(':username'=>$username))[0]['xosOTP_bot'];
             
             $otp = rand(100000,999999);
             
             DB::query('UPDATE users SET password=:password WHERE username=:username', array(':username'=>$username, ':password'=>password_hash($otp, PASSWORD_BCRYPT)));
             
-            file_get_contents ("https://api.telegram.org/[Bot_Token]/sendmessage?chat_id=".$chatid."&text=".$otp);
+            file_get_contents ("https://api.telegram.org/[7644614420:AAHVFoGooaF_sEo4XAuIstmMIiMlM_VFKso]/sendmessage?chat_id=".$chatid."&text=".$otp);
             
             echo '
             <center>
